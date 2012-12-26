@@ -1,6 +1,6 @@
 ﻿var strLayoutCaption = "Lietuviška skaitmenų";
 
-var arrTranslation = new Array();
+var arrTranslation = {};
 
 
 /* First row */
@@ -14,9 +14,9 @@ arrTranslation["53"] = "į";
 arrTranslation["54"] = "š";
 arrTranslation["55"] = "ų";
 arrTranslation["56"] = "ū";
-arrTranslation["57"] = "9";
-arrTranslation["48"] = "0";
-arrTranslation["189"] = arrTranslation["109"] = "-";
+arrTranslation["57"] = "„";
+arrTranslation["48"] = "“";
+arrTranslation["189"] = arrTranslation["109"] = arrTranslation["173"] = "-";
 arrTranslation["187"] = arrTranslation["61"] = "ž";
 
 arrTranslation["Shift + 192"] = "~";
@@ -30,7 +30,7 @@ arrTranslation["Shift + 55"] = "Ų";
 arrTranslation["Shift + 56"] = "Ū";
 arrTranslation["Shift + 57"] = "(";
 arrTranslation["Shift + 48"] = ")";
-arrTranslation["Shift + 189"] = arrTranslation["Shift + 109"] = "_";
+arrTranslation["Shift + 189"] = arrTranslation["Shift + 109"] = arrTranslation["Shift + 173"] = "_";
 arrTranslation["Shift + 187"] = arrTranslation["Shift + 61"] = "Ž";
 
 arrTranslation["Alt + 49"] = "1";

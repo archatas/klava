@@ -1,6 +1,6 @@
 ﻿var strLayoutCaption = "Руская фонетичиская";
 
-var arrTranslation = new Array();
+var arrTranslation = {};
 
 
 /* First row */
@@ -16,7 +16,7 @@ arrTranslation["55"] = "7";
 arrTranslation["56"] = "8";
 arrTranslation["57"] = "9";
 arrTranslation["48"] = "0";
-arrTranslation["189"] = arrTranslation["109"] = "-";
+arrTranslation["189"] = arrTranslation["109"] = arrTranslation["173"] = "-";
 arrTranslation["187"] = arrTranslation["61"] = "=";
 
 arrTranslation["Shift + 192"] = "Ю";
@@ -30,7 +30,7 @@ arrTranslation["Shift + 55"] = "/";
 arrTranslation["Shift + 56"] = "*";
 arrTranslation["Shift + 57"] = "(";
 arrTranslation["Shift + 48"] = ")";
-arrTranslation["Shift + 189"] = arrTranslation["Shift + 109"] = "_";
+arrTranslation["Shift + 189"] = arrTranslation["Shift + 109"] = arrTranslation["Shift + 173"] = "_";
 arrTranslation["Shift + 187"] = arrTranslation["Shift + 61"] = "+";
 
 arrTranslation["Alt + 192"] = "`";

@@ -1,7 +1,7 @@
-var arrKbdFiles = new Array("kbd-us.js", "kbd-baltic.js", "kbd-rusphon.js");
+var arrKbdFiles = ["kbd-us.js", "kbd-baltic.js", "kbd-rusphon.js", "kbd-de.js"];
 
 var strLayoutCaption, arrTranslation;
-var arrLayouts = new Array(), intCurrentLayout, j = 0, jl = arrKbdFiles.length, objScript;
+var arrLayouts = [], intCurrentLayout, j = 0, jl = arrKbdFiles.length, objScript;
 
 var arrAlphaNumericKeys = [
 	192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, 81,
@@ -12,7 +12,7 @@ var arrAlphaNumericKeys = [
 
 var arrTitleCombos = ["", "Shift + ", "Alt + ", "Alt + Shift + "];
 
-var objEventSimulator = new Object();
+var objEventSimulator = {};
 objEventSimulator.capsLockKey = false;
 objEventSimulator.ctrlKey = false;
 objEventSimulator.altKey = false;
@@ -20,7 +20,7 @@ objEventSimulator.altGrKey = false;
 objEventSimulator.shiftKey = false;
 objEventSimulator.keyCode = 0;
 
-var arrVipKeys = new Array();
+var arrVipKeys = [];
 arrVipKeys[8] = "Backspace";
 arrVipKeys[27] = "Esc";
 arrVipKeys[33] = "Page Up";
@@ -49,7 +49,7 @@ var blnOpera = document.all && document.defaultView && document.captureEvents; /
 function loadJSFiles() {
 	if (objScript) {
 		if (!objScript.readyState || "loaded" == objScript.readyState) {
-			arrLayouts[j] = new Array();
+			arrLayouts[j] = {};
 			arrLayouts[j]["caption"] = strLayoutCaption;
 			arrLayouts[j]["translate"] = arrTranslation;
 			document.getElementById("keyboardLayout").options[j] = new Option(strLayoutCaption, j);
@@ -64,7 +64,7 @@ function loadJSFiles() {
 		objScript.setAttribute("onload", "loadJSFiles()");
 		objScript.onload = loadJSFiles;
 //		objScript.setAttribute("defer", "true");
-		objScript.setAttribute("src", arrKbdFiles[j]);
+		objScript.setAttribute("src", "layouts/" + arrKbdFiles[j]);
 		objScript.onreadystatechange = loadJSFiles;
 		document.getElementsByTagName("head")[0].appendChild(objScript);
 	}
@@ -225,6 +225,7 @@ function changeLayout() {
 }
 
 function typing(objButton, intKeyCode) {
+    console.log(intKeyCode);
 	switch(intKeyCode) {
 		case 16:
 			objEventSimulator.shiftKey = !objEventSimulator.shiftKey;
