@@ -1,0 +1,81 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+	<title>Kl&#x00e3;va v1.6</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<meta name="author" content="Aidas Bendoraitis" />
+	<meta http-equiv="imagetoolbar" content="no" />
+
+	<script type="text/javascript" src="main.js" defer="true"></script>
+
+	<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+<body>
+
+<div class="klava">
+<h1>Kl&#x00e3;va v1.6</h1>
+
+<textarea onkeypress="return faceControl(event);" onkeydown="return changeKey(event);" onkeyup="return resetControlKeys(event);" name="laukas" rows="17" cols="66" id="text">Šis įrankis leidžia spausdinti tekstą Jūsų pasirinktu klavišų išdėstymu net jei toks išdėstymas neįdiegtas į Jūsų kompiuterį. Taip pat galima klavišų paspaudimus simuliuoti pele.
+
+This tool lets You type in Your chosen keyboard layout even if the layout is not installed into Your computer. Also You can simulate key presses using Your mouse.
+</textarea>
+<p><label for="keyboardLayout">Klavišų išdėstymas | Keyboard layout:
+<select onchange="changeLayout()" id="keyboardLayout">
+	<option>Klaviatūros išdėstymai neįdiegti</option>
+</select> 
+</label>
+</p>
+<div class="keyboardRow"><button onclick="typing(this, 192)" id="alphaNumeric_192">~</button><button onclick="typing(this, 49 )" id="alphaNumeric_49">!</button><button onclick="typing(this, 50)" id="alphaNumeric_50">@</button><button onclick="typing(this, 51)" id="alphaNumeric_51">#</button><button onclick="typing(this, 52)" id="alphaNumeric_52">$</button><button onclick="typing(this, 53)" id="alphaNumeric_53">%</button><button onclick="typing(this, 54)" id="alphaNumeric_54" id="alphaNumeric_54">^</button><button onclick="typing(this, 55)" id="alphaNumeric_55">&amp;</button><button onclick="typing(this, 56)" id="alphaNumeric_56">*</button><button onclick="typing(this, 57)" id="alphaNumeric_57">(</button><button onclick="typing(this, 48)" id="alphaNumeric_48">)</button><button onclick="typing(this, 189)" id="alphaNumeric_189">_</button><button onclick="typing(this, 187)" id="alphaNumeric_187">+</button><button onclick="backSpace(event)" class="backSpace">Back</button></div>
+<div class="keyboardRow"><button onclick="typing(this, 9)" class="tab">Tab</button><button onclick="typing(this, 81)" id="alphaNumeric_81">Q</button><button onclick="typing(this, 87)" id="alphaNumeric_87">W</button><button onclick="typing(this, 69)" id="alphaNumeric_69">E</button><button onclick="typing(this, 82)" id="alphaNumeric_82">R</button><button onclick="typing(this, 84)" id="alphaNumeric_84">T</button><button onclick="typing(this, 89)" id="alphaNumeric_89">Y</button><button onclick="typing(this, 85)" id="alphaNumeric_85">U</button><button onclick="typing(this, 73)" id="alphaNumeric_73">I</button><button onclick="typing(this, 79)" id="alphaNumeric_79">O</button><button onclick="typing(this, 80)" id="alphaNumeric_80">P</button><button onclick="typing(this, 219)" id="alphaNumeric_219">[</button><button onclick="typing(this, 221)" id="alphaNumeric_221">]</button><button onclick="typing(this, 220)" class="pipeAndBackSlash" id="alphaNumeric_220">|</button></div>
+<div class="keyboardRow"><button onclick="typing(this, 20)" id="capsLockKey" class="capsLock">Caps</button><button onclick="typing(this, 65)" id="alphaNumeric_65">A</button><button onclick="typing(this, 83)" id="alphaNumeric_83">S</button><button onclick="typing(this, 68)" id="alphaNumeric_68">D</button><button onclick="typing(this, 70)" id="alphaNumeric_70">F</button><button onclick="typing(this, 71)" id="alphaNumeric_71">G</button><button onclick="typing(this, 72)" id="alphaNumeric_72">H</button><button onclick="typing(this, 74)" id="alphaNumeric_74">J</button><button onclick="typing(this, 75)" id="alphaNumeric_75">K</button><button onclick="typing(this, 76)" id="alphaNumeric_76">L</button><button onclick="typing(this, 186)" id="alphaNumeric_186">;</button><button onclick="typing(this, 222)" id="alphaNumeric_222">'</button><button onclick="typing(this, 13)" class="enter">Enter</button></div>
+<div class="keyboardRow"><button id="shiftKey" onclick="typing(this, 16)" class="shift">Shift</button><button onclick="typing(this, 90)" id="alphaNumeric_90">Z</button><button onclick="typing(this, 88)" id="alphaNumeric_88">X</button><button onclick="typing(this, 67)" id="alphaNumeric_67">C</button><button onclick="typing(this, 86)" id="alphaNumeric_86">V</button><button onclick="typing(this, 66)" id="alphaNumeric_66">B</button><button onclick="typing(this, 78)" id="alphaNumeric_78">N</button><button onclick="typing(this, 77)" id="alphaNumeric_77">M</button><button onclick="typing(this, 188)" id="alphaNumeric_188">,</button><button onclick="typing(this, 190)" id="alphaNumeric_190">.</button><button onclick="typing(this, 191)" id="alphaNumeric_191">/</button><button onclick="typing(this, 16)" id="shiftGrKey" class="shiftGr">Shift</button></div>
+<div class="keyboardRow"><button onclick="typing(this, 17)" id="ctrlKey" class="ctrl" disabled="disabled">Ctrl</button><button onclick="typing(this, 18)" id="altKey" class="alt">Alt</button><button onclick="typing(this, 32)" class="space">Space</button><button onclick="typing(this, 17)" id="altGrKey" class="altGr">Alt</button><button onclick="typing(this, 17)" id="ctrlGrKey" class="ctrlGr" disabled="disabled">Ctrl</button></div>
+
+</div>
+<div class="licence">
+<!-- Creative Commons License -->
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/"><img alt="Creative Commons License" border="0" src="somerights20.png" /></a>
+This work is authorised and owned by Aidas Bendoraitis aka Archatas and licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.5/">Creative Commons Attribution-NonCommercial-ShareAlike 2.5 License</a>.
+<!-- /Creative Commons License -->
+
+
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:title>Kla~va</dc:title>
+   <dc:date>2005</dc:date>
+   <dc:description>Kla~va is a tool that lets you type text in your chosen keyboard layout which may be not installed on your computer.</dc:description>
+   <dc:creator><Agent>
+      <dc:title>Aidas Bendoraitis aka Archatas</dc:title>
+   </Agent></dc:creator>
+   <dc:rights><Agent>
+      <dc:title>Aidas Bendoraitis aka Archatas</dc:title>
+   </Agent></dc:rights>
+   <dc:type rdf:resource="http://purl.org/dc/dcmitype/Interactive" />
+   <dc:source rdf:resource="http://aaiddennium.online.lt/tools/klava_v1.6"/>
+   <license rdf:resource="http://creativecommons.org/licenses/by-nc-sa/2.5/" />
+</Work>
+
+<License rdf:about="http://creativecommons.org/licenses/by-nc-sa/2.5/">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <requires rdf:resource="http://web.resource.org/cc/Notice" />
+   <requires rdf:resource="http://web.resource.org/cc/Attribution" />
+   <prohibits rdf:resource="http://web.resource.org/cc/CommercialUse" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+   <requires rdf:resource="http://web.resource.org/cc/ShareAlike" />
+</License>
+
+</rdf:RDF>
+
+-->
+</div>
+
+
+</body>
+</html>

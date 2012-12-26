@@ -1,0 +1,134 @@
+body {
+	text-align: center;
+	background: #005AA9;
+}
+
+body, button, input, select, textarea {
+	font: 69% Verdana, Arial, sans-serif;
+	color: #224F8A;
+}
+
+img  {
+	border: none;
+}
+
+h1 {
+	font-size: 3em;
+	color: #0061AF;
+	padding: 0em;
+	padding-bottom: .2em;
+	margin: 0em;
+}
+
+p {
+	padding: 1em;
+	margin: 0em;
+	padding-left: 0em;
+	padding-right: 0em;
+}
+
+textarea {
+	font: 1em Verdana, Arial, sans-serif;
+	width: 36em;
+	height: 15em;
+	border: 1px solid #224F8A;
+	background: #E6FFFF;
+}
+
+select {
+	font-size: 1em;
+	background: #E6FFFF;
+	border: 1px solid #224F8A;
+}
+
+div.keyboardRow {
+	font: 1em Verdana, Arial, sans-serif;
+}
+
+div.keyboardRow button {
+	font: 1.2em Verdana, Arial, sans-serif;
+	width: 2em;
+	height: 2em;
+	margin: 0em;
+	padding: 0em;
+}
+
+div.keyboardRow button.backSpace {
+	width: 4em;
+}
+
+div.keyboardRow button.tab {
+	width: 3em;
+}
+
+div.keyboardRow button.pipeAndBackSlash {
+	width: 3em;
+}
+
+div.keyboardRow button.capsLock {
+	width: 4em;
+}
+
+div.keyboardRow button.enter {
+	width: 4em;
+}
+
+div.keyboardRow button.shift {
+	width: 5em;
+}
+
+div.keyboardRow button.shiftGr {
+	width: 5em;
+}
+
+div.keyboardRow button.ctrl {
+	width: 3em;
+}
+
+div.keyboardRow button.alt {
+	width: 4em;
+}
+
+div.keyboardRow button.ctrlGr {
+	width: 3em;
+}
+
+div.keyboardRow button.altGr {
+	width: 4em;
+	color: blue;
+}
+
+div.keyboardRow button.space {
+	width: 10em;
+	margin-right: 3.7em;
+	margin-left: 3.7em;
+}
+
+html>body div.keyboardRow button.space {
+	margin-right: 3em;
+	margin-left: 3em;
+}
+
+.klava {
+	border: 1px solid #224F8A;
+	background: #FFEA77;
+	width: 45em;
+	padding: 2em;
+	margin: 0em auto;
+}
+
+.licence {
+	width: 45em;
+	border: 1px solid #224F8A;
+	border-top: 0px none transparent;
+	background: #E6FFFF;
+	padding: 2em;
+	margin: 0em auto;
+}
+
+.licence img {
+	display: block;
+	width: 88px;
+	float: left;
+	margin-right: 1em;
+}
