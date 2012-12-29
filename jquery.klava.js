@@ -320,7 +320,9 @@
                 var field = this;
                 var $parent = $(this).parent();
                 $parent.append(layout_selection()).append(strKeyboardLayout);
-                $('.keyboardLayout', $parent).change(changeLayout);
+                $('.keyboardLayout', $parent).change(function() {
+                    return changeLayout(field);
+                }).change();
                 $('button:not(.backSpace)', $parent).click(function() {
                     return typing(field, this, $(this).data('keycode'));
                 });
