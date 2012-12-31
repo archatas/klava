@@ -1,0 +1,67 @@
+div.keyboardRow {
+	font: 1em Verdana, Arial, sans-serif;
+}
+
+div.keyboardRow button {
+	font: 1.2em Verdana, Arial, sans-serif;
+	width: 2em;
+	height: 2em;
+	margin: 0em;
+	padding: 0em;
+}
+
+div.keyboardRow button.backSpace {
+	width: 4em;
+}
+
+div.keyboardRow button.tab {
+	width: 3em;
+}
+
+div.keyboardRow button.pipeAndBackSlash {
+	width: 3em;
+}
+
+div.keyboardRow button.capsLock {
+	width: 4em;
+}
+
+div.keyboardRow button.enter {
+	width: 4em;
+}
+
+div.keyboardRow button.shift {
+	width: 5em;
+}
+
+div.keyboardRow button.shiftGr {
+	width: 5em;
+}
+
+div.keyboardRow button.ctrl {
+	width: 3em;
+}
+
+div.keyboardRow button.alt {
+	width: 4em;
+}
+
+div.keyboardRow button.ctrlGr {
+	width: 3em;
+}
+
+div.keyboardRow button.altGr {
+	width: 4em;
+	color: blue;
+}
+
+div.keyboardRow button.space {
+	width: 10em;
+	margin-right: 3.7em;
+	margin-left: 3.7em;
+}
+
+html>body div.keyboardRow button.space {
+	margin-right: 3em;
+	margin-left: 3em;
+}

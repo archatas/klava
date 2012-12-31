@@ -255,21 +255,20 @@
                     $('.shiftGrKey', $parent).css('fontWeight', (objEventSimulator.shiftKey)? "bold": "normal");
                     break;
                 case 17:
-                    if ("altGrKey" == objButton.id) {
-                        objEventSimulator.altKey = objEventSimulator.altGrKey = !objEventSimulator.altGrKey;
-                        $('.altGrKey', $parent).css('fontWeight', (objEventSimulator.altGrKey)? "bold": "normal");
-                    } else {
-                        objEventSimulator.ctrlKey = !objEventSimulator.ctrlKey;
-                        $('.ctrlKey', $parent).css('fontWeight', (objEventSimulator.ctrlKey)? "bold": "normal");
-                        $('.ctrlGrKey', $parent).css('fontWeight', (objEventSimulator.ctrlKey)? "bold": "normal");
-                    }
+                    objEventSimulator.ctrlKey = !objEventSimulator.ctrlKey;
+                    $('.ctrlKey', $parent).css('fontWeight', (objEventSimulator.ctrlKey)? "bold": "normal");
+                    $('.ctrlGrKey', $parent).css('fontWeight', (objEventSimulator.ctrlKey)? "bold": "normal");
                     break;
                 case 20:
                     objEventSimulator.capsLockKey = !objEventSimulator.capsLockKey;
                     $('.capsLockKey', $parent).css('fontWeight', (objEventSimulator.capsLockKey)? "bold": "normal");
                     break;
                 case 18:
-                    if ("altKey" == objButton.id) {
+                    if ($(objButton).hasClass("altGrKey")) {
+                        objEventSimulator.altKey = objEventSimulator.altGrKey = !objEventSimulator.altGrKey;
+                        $('.altGrKey', $parent).css('fontWeight', (objEventSimulator.altGrKey)? "bold": "normal");
+                    }
+                    if ($(objButton).hasClass("altKey")) {
                         objEventSimulator.altKey = !objEventSimulator.altKey;
                         $('.altKey', $parent).css('fontWeight', (objEventSimulator.altKey)? "bold": "normal");
                     }
