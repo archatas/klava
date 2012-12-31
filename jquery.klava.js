@@ -3,6 +3,7 @@
     $.fn.klava = function(options) {
         var $this = this;
         var settings = $.extend( {
+            str_keyboard_layout: "Keyboard layout",
             layouts: [
                 "layouts/kbd-us.js",
                 "layouts/kbd-baltic.js",
@@ -88,7 +89,9 @@
         }
 
         function layout_selection() {
-            var html = '<div class="keyboardLayoutContainer"><label>Keyboard layout: <select class="keyboardLayout">';
+            var html = '<div class="keyboardLayoutContainer"><label>'
+            + settings.str_keyboard_layout
+            + ': <select class="keyboardLayout">';
             $(arrKbdFiles).each(function() {
                 html += '<option value="' + this + '">' + layouts[this].caption + '</option>';
             });
