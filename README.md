@@ -1,7 +1,11 @@
+Klãva
+=====
+
 This jquery plugin is a tool that lets you type in your chosen keyboard layout even if the layout is not installed on your computer. Also you can simulate key presses using your mouse.
 
-To use klava, include the following into your document:
+To use Klãva, include the following into the head of your document:
 ```html
+<link rel="stylesheet" href="klava.css" type="text/css" />
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
 <script src="jquery.klava.js"></script>
 <script>

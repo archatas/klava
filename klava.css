@@ -2,9 +2,15 @@ div.keyboardLayoutContainer {
     padding: .5em 0;
 }
 
-div.keyboard {
+div.keyboardContainer {
     display: none;
     margin-bottom: .5em;
+    position: relative;
+    height: 11.5em;
+}
+div.keyboard {
+    position: absolute;
+    bottom: 0;
 }
 
 div.keyboardRow {
