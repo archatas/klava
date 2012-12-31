@@ -71,6 +71,11 @@ select {
     padding: 2em;
 }
 
+label {
+    display: block;
+    margin-bottom: .5em;
+}
+
 textarea, .textInput {
     width: 100%;
     display: block;

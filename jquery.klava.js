@@ -20,7 +20,8 @@
         + '<div class="keyboardRow"><button class="shiftKey shift" data-keycode="16">Shift</button><button data-keycode="90" class="alphaNumeric_90">Z</button><button data-keycode="88" class="alphaNumeric_88">X</button><button data-keycode="67" class="alphaNumeric_67">C</button><button data-keycode="86" class="alphaNumeric_86">V</button><button data-keycode="66" class="alphaNumeric_66">B</button><button data-keycode="78" class="alphaNumeric_78">N</button><button data-keycode="77" class="alphaNumeric_77">M</button><button data-keycode="188" class="alphaNumeric_188">,</button><button data-keycode="190" class="alphaNumeric_190">.</button><button data-keycode="191" class="alphaNumeric_191">/</button><button data-keycode="16" class="shiftGrKey shiftGr">Shift</button></div>'
         + '<div class="keyboardRow"><button data-keycode="17" class="ctrlKey ctrl" disabled="disabled">Ctrl</button><button data-keycode="18" class="altKey alt">Alt</button><button data-keycode="32" class="space">Space</button><button data-keycode="18" class="altGrKey altGr">Alt</button><button data-keycode="17" class="ctrlGrKey ctrlGr" disabled="disabled">Ctrl</button></div>'
         + '</div>';
-
+        var strHandle = '<div class="keyboardHandle"><a href="#">▼</a></div>';
+        
         var arrAlphaNumericKeys = [
             192, 49, 50, 51, 52, 53, 54, 55, 56, 57, 48, 189, 187, 81,
             87, 69, 82, 84, 89, 85, 73, 79, 80, 219, 221, 220,
@@ -87,11 +88,11 @@
         }
 
         function layout_selection() {
-            var html = '<p><label>Keyboard layout: <select class="keyboardLayout">';
+            var html = '<div class="keyboardLayoutContainer"><label>Keyboard layout: <select class="keyboardLayout">';
             $(arrKbdFiles).each(function() {
                 html += '<option value="' + this + '">' + layouts[this].caption + '</option>';
             });
-            html += '</select></label></p>';
+            html += '</select></label></div>';
             return html;
         }
         
@@ -318,7 +319,7 @@
             $this.each(function() {
                 var field = this;
                 var $parent = $(this).parent();
-                $parent.append(layout_selection()).append(strKeyboardLayout);
+                $parent.append(layout_selection()).append(strKeyboardLayout).append(strHandle);
                 $('.keyboardLayout', $parent).change(function() {
                     return changeLayout(field);
                 }).change();
@@ -327,6 +328,17 @@
                 });
                 $('button.backSpace', $parent).click(function() {
                     return backSpace(field);
+                });
+                $('.keyboardHandle a', $parent).click(function() {
+                    var $keyboard = $('.keyboard', $parent);
+                    if ($keyboard.is(":visible")) {
+                        $keyboard.slideUp();
+                        $(this).html('▼');
+                    } else {
+                        $keyboard.slideDown();
+                        $(this).html('▲');
+                    }
+                    return false;
                 });
                 $(this).keypress(faceControl)
                     .keydown(changeKey).keyup(resetControlKeys);

@@ -1,9 +1,18 @@
+div.keyboardLayoutContainer {
+    padding: .5em 0;
+}
+
+div.keyboard {
+    display: none;
+    margin-bottom: .5em;
+}
+
 div.keyboardRow {
-	font: 1em Verdana, Arial, sans-serif;
+	font: 1em Arial, sans-serif;
 }
 
 div.keyboardRow button {
-	font: 1.2em Verdana, Arial, sans-serif;
+	font: 1.2em Arial, sans-serif;
 	width: 2em;
 	height: 2em;
 	margin: 0em;
@@ -64,4 +73,25 @@ div.keyboardRow button.space {
 html>body div.keyboardRow button.space {
 	margin-right: 3em;
 	margin-left: 3em;
+}
+
+.keyboardHandle {
+    border-top: 1px solid #888;
+    text-align: center;
+}
+
+.keyboardHandle a {
+    border: 1px solid #888;
+    border-top: 1px solid #fff;
+    margin-top: -1px;
+    color: #888;
+    text-decoration: none;
+    width: 5em;
+    display: inline-block;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
