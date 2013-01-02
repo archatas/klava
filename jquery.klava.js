@@ -32,14 +32,6 @@
         
         var arrTitleCombos = ["", "Shift + ", "Alt + ", "Alt + Shift + "];
         
-        var objEventSimulator = {};
-        objEventSimulator.capsLockKey = false;
-        objEventSimulator.ctrlKey = false;
-        objEventSimulator.altKey = false;
-        objEventSimulator.altGrKey = false;
-        objEventSimulator.shiftKey = false;
-        objEventSimulator.keyCode = 0;
-        
         var arrVipKeys = [];
         arrVipKeys[8] = "Backspace";
         arrVipKeys[27] = "Esc";
@@ -156,6 +148,8 @@
         }
         
         function getCombo(objEvent) {
+            var objField = objEvent.target;
+            var objEventSimulator = $(objField).data('objEventSimulator');
             var strCombo = "";
             if (objEvent.ctrlKey) {
                 strCombo += "Ctrl + ";
@@ -175,6 +169,7 @@
         
         function changeKey(objEvent) {
             var objField = objEvent.target;
+            var objEventSimulator = $(objField).data('objEventSimulator');
             var $parent = $(objField).parent();
             var layout_path = $('.keyboardLayout', $parent).val();
             switch(objEvent.keyCode) {
@@ -212,11 +207,12 @@
         }
         
         function changeLayout(objField) {
-        //	if (objEventSimulator.capsLockKey) {
-        //		objEventSimulator.shiftKey = !objEventSimulator.shiftKey;
-        //	}
+            var objEventSimulator = $(objField).data('objEventSimulator');
             var $parent = $(objField).parent();
             var layout_path = $('.keyboardLayout', $parent).val();
+            //if (objEventSimulator.capsLockKey) {
+            //    objEventSimulator.shiftKey = !objEventSimulator.shiftKey;
+            //}
             if (layouts[layout_path]) {
                 var intLength = arrAlphaNumericKeys.length;
                 for(i=0; i<intLength; i++) {
@@ -244,13 +240,13 @@
                     }
                 }
             }
-        //	if (objEventSimulator.capsLockKey) {
-        //		objEventSimulator.shiftKey = !objEventSimulator.shiftKey;
-        //	}
+            //if (objEventSimulator.capsLockKey) {
+            //    objEventSimulator.shiftKey = !objEventSimulator.shiftKey;
+            //}
         }
         
         function typing(objField, objButton, intKeyCode) {
-            console.log(intKeyCode);
+            var objEventSimulator = $(objField).data('objEventSimulator');
             var $parent = $(objField).parent();
             switch(intKeyCode) {
                 case 16:
@@ -278,9 +274,9 @@
                     }
                     break;
                 default:
-        //			if (objEventSimulator.capsLockKey) {
-        //				objEventSimulator.shiftKey = !objEventSimulator.shiftKey;
-        //			}
+                    //if (objEventSimulator.capsLockKey) {
+                    //    objEventSimulator.shiftKey = !objEventSimulator.shiftKey;
+                    //}
                     objEventSimulator.keyCode = intKeyCode;
                     objEventSimulator.target = objField;
                     changeKey(objEventSimulator);
@@ -293,6 +289,7 @@
         
         function resetControlKeys(objEvent) {
             var objField = objEvent.target;
+            var objEventSimulator = $(objField).data('objEventSimulator');
             var $parent = $(objField).parent();
             switch(objEvent.keyCode) {
                 case 16:
@@ -322,6 +319,16 @@
             $this.each(function() {
                 var field = this;
                 var $parent = $(this).parent();
+                var objEventSimulator = {
+                    capsLockKey: false,
+                    ctrlKey: false,
+                    altKey: false,
+                    altGrKey: false,
+                    shiftKey: false,
+                    keyCode: 0,
+                    target: field
+                };
+                $(field).data('objEventSimulator', objEventSimulator);
                 $parent.append(layout_selection()).append(strKeyboardLayout).append(strHandle);
                 $('.keyboardLayout', $parent).change(function() {
                     return changeLayout(field);
@@ -345,8 +352,6 @@
                 });
                 $(this).keypress(faceControl)
                     .keydown(changeKey).keyup(resetControlKeys);
-                console.log(this);
-                console.log(layouts);
             });
         });
         
