@@ -36,7 +36,7 @@ arrTranslation["Alt + 55"] = "{";
 arrTranslation["Alt + 56"] = "[";
 arrTranslation["Alt + 57"] = "]";
 arrTranslation["Alt + 48"] = "}";
-arrTranslation["Alt + 189"] = arrTranslation["109"] = arrTranslation["173"] = "\\";
+arrTranslation["Alt + 189"] = arrTranslation["Alt + 109"] = arrTranslation["Alt + 173"] = "\\";
 
 
 /* Second row */
