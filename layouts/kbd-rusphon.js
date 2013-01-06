@@ -1,4 +1,4 @@
-﻿var strLayoutCaption = "Руская фонетичиская";
+﻿var strLayoutCaption = "Русская фонетическая";
 
 var arrTranslation = {};
 
