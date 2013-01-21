@@ -203,7 +203,7 @@
                 event.returnValue = true;
                 event.cancelBubble = true;
             }
-            return true;
+            return false;
         }
         
         function changeLayout(objField) {
