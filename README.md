@@ -26,5 +26,5 @@ The tool is supported on these browsers:
 Chrome v24.0
 Firefox v18.0
 Safari v6.0
-Internet Explorer 
-Opera
+Internet Explorer v9.0
+Opera v12.12
