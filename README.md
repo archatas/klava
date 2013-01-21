@@ -22,9 +22,9 @@ $(document).ready(function() {
 </script>
 ```
 
-The tool is supported on these browsers:
-Chrome v24.0
-Firefox v18.0
-Safari v6.0
-Internet Explorer v9.0
-Opera v12.12
+The tool is supported for the following browsers (but might also work on the older versions):
+Chrome 24+
+Firefox 18+
+Safari 6+
+Internet Explorer 9+
+Opera 12+
