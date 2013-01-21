@@ -23,8 +23,8 @@ $(document).ready(function() {
 ```
 
 The tool is supported for the following browsers (but might also work on the older versions):
-Chrome 24+
-Firefox 18+
-Safari 6+
-Internet Explorer 9+
-Opera 12+
+  * Chrome 24+
+  * Firefox 18+
+  * Safari 6+
+  * Internet Explorer 9+
+  * Opera 12+
