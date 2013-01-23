@@ -28,3 +28,5 @@ The tool is supported for the following browsers (but might also work on the old
   * Safari 6+
   * Internet Explorer 9+
   * Opera 12+
+
+Demo: http://aaiddennium.com/tools/klava_v2.0/
