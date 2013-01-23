@@ -141,7 +141,7 @@
         
         function faceControl(objEvent) {
             var canGo = false;
-            if (objEvent.charCode>8000 || objEvent.keyCode>8000 || (arrVipKeys[objEvent.keyCode] && !document.all) || objEvent.ctrlKey) {
+            if (objEvent.charCode>8000 || objEvent.keyCode>8000 || (arrVipKeys[objEvent.keyCode] && !document.all) || objEvent.ctrlKey || objEvent.metaKey) {
                 canGo = true;
             }
             return canGo;
@@ -168,6 +168,7 @@
         }
         
         function changeKey(objEvent) {
+            var strCombo;
             var objField = objEvent.target;
             var objEventSimulator = $(objField).data('objEventSimulator');
             var $parent = $(objField).parent();
@@ -192,6 +193,9 @@
                     objEventSimulator.capsLockKey = !objEventSimulator.capsLockKey;
                     $('.capsLockKey', $parent).css('fontWeight',  (objEventSimulator.capsLockKey)? "bold": "normal");
                     break;
+                case 224:
+                    objEventSimulator.metaKey = true;
+                    break;
                 default:
                     strCombo = getCombo(objEvent);
                     if (layouts[layout_path].translate[strCombo]) {
@@ -199,9 +203,8 @@
                     }               
             }
             changeLayout(objField);
-            if (document.all && 9==objEvent.keyCode && !objEvent.ctrlKey/* && !arrVipKeys[objEvent.keyCode]*/) {
-                event.returnValue = true;
-                event.cancelBubble = true;
+            if (!strCombo || !(layouts[layout_path].translate[strCombo])) {
+                return true;
             }
             return false;
         }
@@ -308,6 +311,9 @@
                     $('.altGrKey', $parent).css('fontWeight',  (objEventSimulator.altKey)? "bold": "normal");
                     break;
                 case 20:
+                    break;
+                case 224:
+                    objEventSimulator.metaKey = false;
                     break;
             }
             changeLayout(objField);
