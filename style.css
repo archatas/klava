@@ -19,6 +19,10 @@ h1 {
 	margin: 0em;
 }
 
+a {
+    color: #1047A9;
+}
+
 p {
 	padding-bottom: 1em;
 	margin: 0em;
@@ -31,8 +35,8 @@ p:last-child {
 
 select {
 	font-size: 1em;
-	background: #E6FFFF;
-	border: 1px solid #224F8A;
+	background: #FFFEB2;
+	border: 1px solid #FFCF00;
 }
 
 .container {
@@ -80,8 +84,8 @@ textarea, .textInput {
     width: 100%;
     display: block;
 	font: 1em Arial, sans-serif;
-	border: 1px solid #224F8A;
-	background: #E6FFFF;
+	background: #FFFEB2;
+	border: 1px solid #FFCF00;
 	padding: .3em 0;
 }
 
@@ -89,7 +93,7 @@ textarea, .textInput {
 	width: 576px;
 	border: 1px solid #888;
 	border-top: 0px none transparent;
-	background: #E6FFFF;
+	background: #FFCF00;
 	padding: 2em;
 	margin: 0em auto;
 }

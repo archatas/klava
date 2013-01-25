@@ -6,21 +6,53 @@ This jquery plugin is a tool that lets you type in your chosen keyboard layout e
 To use Klãva, include the following into the head of your document:
 ```html
 <link rel="stylesheet" href="klava.css" type="text/css" />
-<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="jquery.klava.js"></script>
 <script>
 $(document).ready(function() {
-    $('textarea').klava({
+    var options = {
         layouts: [
             "layouts/kbd-us.js",
             "layouts/kbd-baltic.js",
             "layouts/kbd-rusphon.js",
             "layouts/kbd-de.js"
         ]
-    });
+    };
+    $('textarea').klava(options);
 });
 </script>
 ```
+
+These are available options:
+
+<table>
+    <tr>
+        <th>Option</th>
+        <th>Description</th>
+        <th>Default value</th>
+    </tr>
+    <tr>
+        <td>expanded</td>
+        <td>Boolean determining if the visual keyboard is expanded</td>
+        <td>false</td>
+    </tr>
+    <tr>
+        <td>str_keyboard_layout</td>
+        <td>The title for the selection of the layouts</td>
+        <td>"Keyboard layout"</td>
+    </tr>
+    <tr>
+        <td>layouts</td>
+        <td>List of paths to keyboard layout definitions</td>
+        <td><pre>[
+    "layouts/kbd-us.js",
+    "layouts/kbd-baltic.js",
+    "layouts/kbd-rusphon.js",
+    "layouts/kbd-de.js"
+]</pre></td>
+    </tr>
+</table>
+
 
 The tool is supported for the following browsers (but might also work on the older versions):
   * Chrome 24+

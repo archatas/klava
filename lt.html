@@ -12,19 +12,14 @@
 	<script src="jquery.klava.js"></script>
 	<script>
 	$(function() {
-        $('.title').klava({
-            expanded: true,
-            layouts: [
-                "layouts/kbd-us.js",
-                "layouts/kbd-baltic.js",
-            ]
-        });
         $('.content').klava({
-            str_keyboard_layout: "Your keyboard layout",
+            expanded: true,
+            str_keyboard_layout: "Klaviatūros išdėstymas",
             layouts: [
                 "layouts/kbd-baltic.js",
                 "layouts/kbd-rusphon.js",
-                "layouts/kbd-de.js"
+                "layouts/kbd-de.js",
+                "layouts/kbd-us.js"
             ]
         });
 	});
@@ -35,24 +30,14 @@
 
 <div class="container">
 <h1>Kl&#x00e3;va v2.0</h1>
-<div class="clone-on-github"><a href="https://github.com/archatas/klava">Clone on GitHub »</a></div>
+<div class="clone-on-github"><a href="https://github.com/archatas/klava">Klonuok GitHube »</a></div>
 
-<p>This tool lets you type in your chosen keyboard layout even if the layout is not installed on your computer. Also you can simulate key presses using your mouse.</p>
+<p>Šis įrankis leidžia spausdinti tekstą Jūsų pasirinktu klavišų išdėstymu net jei toks išdėstymas neįdiegtas į Jūsų kompiuterį. Taip pat galima klavišų paspaudimus simuliuoti pele.</p>
 
-<p>Set English (United States) keyboard layout as the default layout for your computer before using this tool.</p>
-
-<div class="ctrlHolder">
-    <label>Title:</label>
-    <input type="text" class="title textInput" />
-</div>
+<p>Pasirinkite „English (United States)“ klaviatūros išdėstymą kaip pagrindinį Jūsų operacinėje sistemoje prieš naudodamiesi šiuo įrankiu.</p>
 
 <div class="ctrlHolder">
-    <label>Content:</label>
-    <textarea class="content" rows="9" cols="66" id="text"></textarea>
-</div>
-
-<div class="ctrlHolder">
-    <label>More content:</label>
+    <label>Turinys:</label>
     <textarea class="content" rows="9" cols="66" id="text"></textarea>
 </div>
 

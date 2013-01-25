@@ -3,6 +3,7 @@
     $.fn.klava = function(options) {
         var $this = this;
         var settings = $.extend( {
+            expanded: false,
             str_keyboard_layout: "Keyboard layout",
             layouts: [
                 "layouts/kbd-us.js",
@@ -345,7 +346,7 @@
                 $('button.backSpace', $parent).click(function() {
                     return backSpace(field);
                 });
-                $('.keyboardHandle a', $parent).click(function() {
+                var $handle = $('.keyboardHandle a', $parent).click(function() {
                     var $keyboard = $('.keyboardContainer', $parent);
                     if ($keyboard.is(":visible")) {
                         $keyboard.slideUp();
@@ -355,6 +356,12 @@
                         $(this).html('▲');
                     }
                     return false;
+                }).each(function() {
+                    if (settings.expanded) {
+                        var $keyboard = $('.keyboardContainer', $parent);
+                        $keyboard.show();
+                        $(this).html('▲');
+                    }
                 });
                 $(this).keypress(faceControl)
                     .keydown(changeKey).keyup(resetControlKeys);
