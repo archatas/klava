@@ -1,3 +1,13 @@
+/*
+ * jquery.klava.js
+ * Keyboard layout simulator
+ *
+ * Demo: http://aaiddennium.com/tools/klava_v2.0/
+ * Repo: https://github.com/archatas/klava
+ * 
+ * Copyright (c) 2013 Aidas Bendoraitis aka archatas
+ * Licensed under a Creative Commons Attribution 3.0 Unported License.
+ */
 (function($, undefined) {
     var layouts = {};
     $.fn.klava = function(options) {
