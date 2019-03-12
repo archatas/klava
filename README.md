@@ -6,7 +6,7 @@ This jquery plugin is a tool that lets you type in your chosen keyboard layout e
 To use Klãva, include the following into the head of your document:
 ```html
 <link rel="stylesheet" href="klava.css" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 <script src="jquery.klava.js"></script>
 <script>
 $(document).ready(function() {
@@ -61,4 +61,4 @@ The tool is supported for the following browsers (but might also work on the old
   * Internet Explorer 9+
   * Opera 12+
 
-Demo: http://aaiddennium.com/tools/klava_v2.0/
+Demo: https://aidas.bendoraitis.lt/archive/tools/klava_v2.0/
